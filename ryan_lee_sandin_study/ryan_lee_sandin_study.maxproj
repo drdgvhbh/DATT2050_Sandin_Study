@@ -1,9 +1,9 @@
 {
 	"name" : "ryan_lee_sandin_study",
 	"version" : 1,
-	"creationdate" : 3561825096,
-	"modificationdate" : 3562264547,
-	"viewrect" : [ 33.0, 75.0, 300.0, 500.0 ],
+	"creationdate" : -733142200,
+	"modificationdate" : -732517844,
+	"viewrect" : [ 542.0, 399.0, 300.0, 500.0 ],
 	"autoorganize" : 1,
 	"hideprojectwindow" : 0,
 	"showdependencies" : 1,
@@ -12,8 +12,7 @@
 		"patchers" : 		{
 			"ryan_lee_sandin_study.maxpat" : 			{
 				"kind" : "patcher",
-				"local" : 1,
-				"toplevel" : 1
+				"local" : 1
 			}
 ,
 			"sources.maxpat" : 			{
@@ -30,6 +29,19 @@
 				"kind" : "patcher",
 				"local" : 1
 			}
+,
+			"newMAIN.maxpat" : 			{
+				"kind" : "patcher",
+				"local" : 1
+			}
+
+		}
+,
+		"media" : 		{
+			"aaa.mp4" : 			{
+				"kind" : "moviefile",
+				"local" : 1
+			}
 
 		}
 ,
@@ -41,6 +53,11 @@
 ,
 			"customKaleido.genjit" : 			{
 				"kind" : "genjit",
+				"local" : 1
+			}
+,
+			"cc.uyvy2rgba.jxs" : 			{
+				"kind" : "shader",
 				"local" : 1
 			}
 

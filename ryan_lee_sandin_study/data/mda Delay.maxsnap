@@ -1,0 +1,23 @@
+{
+	"filetype" : "C74Snapshot",
+	"version" : 2,
+	"minorversion" : 0,
+	"name" : "mda Delay",
+	"origin" : "mda Delay.dll",
+	"type" : "VST",
+	"subtype" : "AudioEffect",
+	"embed" : 0,
+	"snapshot" : 	{
+		"pluginname" : "mda Delay.dll",
+		"plugindisplayname" : "mda Delay",
+		"pluginsavedname" : "mda Delay",
+		"pluginsaveduniqueid" : 0,
+		"version" : 1,
+		"isbank" : 0,
+		"isbase64" : 1,
+		"sliderorder" : [ 0, 1, 2, 3, 4, 5 ],
+		"slidervisibility" : [ 1, 1, 1, 1, 1, 1 ],
+		"blob" : "80.CMlaKA....fQ3MzZ....AzFYgkG...P.....FPTYrEVd..............................vO....9nXOw8yR+FyO....+.gVM7SESBC"
+	}
+
+}

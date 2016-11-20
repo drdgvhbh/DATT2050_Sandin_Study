@@ -2,7 +2,7 @@ autowatch = 1;
 outlets = 2;
 
 var width = 480;
-var height = 360;
+var height = 270;
 
 function bang() {
 	size();
