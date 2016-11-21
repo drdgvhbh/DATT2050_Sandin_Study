@@ -10,12 +10,22 @@ phase_2.immediate = 1;
 phase_3.immediate = 1;
 phase_4.immediate = 1;
 phase_5.immediate = 1;
+phase_5_5.immediate = 1;
+phase_5_75.immediate = 1;
 phase_6.immediate = 1;
+phase_6_5.immediate = 1;
+phase_7.immediate = 1;
+phase_8.immediate = 1;
+phase_9.immediate = 1;
+phase_10.immediate = 1;
+phase_11.immediate = 1;
+phase_12.immediate = 1;
 
 var _G = new Global( "global" );
 var util = Util.getInstance(); 
 var p = this.patcher;
 var input1 = p.getnamed("input1").subpatcher();
+var input2 = p.getnamed("input2").subpatcher();
 
 function bang() {
 	if (_G.timerOffset == null) {
@@ -54,8 +64,26 @@ function checkTime() {
 					phase_4();
 				} else if ( k == "phase_5" ) {
 					phase_5();
+				} else if ( k == "phase_5_5" ) {
+					phase_5_5();
+				} else if ( k == "phase_5_75" ) {
+					phase_5_75();
 				} else if ( k == "phase_6" ) {
 					phase_6();
+				} else if ( k == "phase_6.5" ) {
+					phase_6_5();
+				} else if ( k == "phase_7" ) {
+					phase_7();
+				} else if ( k == "phase_8" ) {
+					phase_8();
+				} else if ( k == "phase_9" ) {
+					phase_9();
+				} else if ( k == "phase_10" ) {
+					phase_10();
+				} else if ( k == "phase_11" ) {
+					phase_11();
+				} else if ( k == "phase_12" ) {
+					phase_12();
 				}
 			}
 		}
@@ -72,7 +100,10 @@ function phase_1() {
 	input1.getnamed("p2_quant").message(0.01);
 	input1.getnamed("p1_phase_b").message( "bang" );
 	input1.getnamed("p1_center_t").message(1);
-	input1.getnamed("p1-3_col_gate").message( 1 );
+	input1.getnamed("p1-3_col_gate").message( 1 );	
+	input1.getnamed("input1_G").message( 0 );	
+	input1.getnamed("input1_g_init").message( "bang" );	
+	p.getnamed("input3_switch").message( 1 );
 
 	
 }
@@ -86,32 +117,87 @@ function phase_2() {
 }
 
 function phase_3() {
-	p.getnamed("p4_counter").message( new Array( "set", 1) );
+	input2.getnamed("input2_gate").message( 1 );	
+	input2.getnamed("p4_counter").message( new Array( "set", 1) );
 	p.getnamed("p3_xfade").message( "bang" );
-	p.getnamed("p3_div").message( "bang" );
-	input1.getnamed("p1-3_col_gate").message( 2 );
-	p.getnamed("p3_size1").message( "bang" );
-	p.getnamed("p3_multX_1").message( "bang" );	
+	input2.getnamed("p3_div").message( "bang" );
+	input1.getnamed("p1-3_col_gate").message( 1 );
+	input2.getnamed("p3_size1").message( "bang" );
+	input2.getnamed("p3_multX_1").message( "bang" );	
 }
 
 function phase_4() {
-	p.getnamed("p4_size_t").message( 1 );	
+	input2.getnamed("p4_size_t").message( 1 );	
 }
 
 function phase_5() {
-	p.getnamed("p4_size_t").message( 0 );
-	p.getnamed("p4_counter").message( new Array( "set", 1) );
-	p.getnamed("p3_size1").message( "bang" );
-	p.getnamed("p5_counter").message( new Array( "set", 1) );
-	p.getnamed("p3_size1").message( "bang" );
-	p.getnamed("p5_rand_t").message( 1 );
-	p.getnamed("p5_div_t").message( 1 );
+	input2.getnamed("p4_size_t").message( 0 );
+	input2.getnamed("p4_counter").message( new Array( "set", 1) );
+	input2.getnamed("p3_size1").message( "bang" );
+	input2.getnamed("p5_counter").message( new Array( "set", 1) );
+	input2.getnamed("p3_size1").message( "bang" );
+	input2.getnamed("p5_rand_t").message( 1 );
+	input2.getnamed("p5_div_t").message( 1 );
+}
+
+function phase_5_5() {
+	input2.getnamed("p5_rand_t").message( 0 );
+	input2.getnamed("p5_div_t").message( 0 );	
+}
+
+function phase_5_5() {
+	input2.getnamed("p5_rand_t").message( 0 );
+	input2.getnamed("p5_div_t").message( 0 );	
+}
+
+function phase_5_75() {
+	input2.getnamed("p5_rand_t").message( 1 );
+	input2.getnamed("p5_div_t").message( 1 );	
 }
 
 function phase_6() {
-	p.getnamed("p5_div_t").message( 0 );
-	p.getnamed("p5_rand_t").message( 0 );
-	p.getnamed("p6_multX").message( "bang" );
-	p.getnamed("p6_div").message( "bang" );
-	p.getnamed("p4_size_t").message( 1 );
+	input2.getnamed("p5_div_t").message( 0 );
+	input2.getnamed("p5_rand_t").message( 0 );
+	input2.getnamed("p6_multX").message( "bang" );
+	input2.getnamed("p6_div").message( "bang" );
+	input2.getnamed("p4_size_t").message( 1 );
+}
+
+function phase_6_5() {
+	input2.getnamed("p6_div").message( "bang" );
+}
+
+function phase_7() {
+	input2.getnamed("p4_size_t").message( 0 );
+	input2.getnamed("p3_size1").message( "bang" );
+	p.getnamed("input3_switch").message( 2 );
+	input1.getnamed("input1_G").message( 1 );	
+	p.getnamed("p7_start").message( "bang" );	
+	p.getnamed("p7_xfade").message( "bang" );	
+	p.getnamed("p7_rubix").message( new Array( "rows", 2) );
+	p.getnamed("p7_rubix").message( new Array( "cols", 2) );
+	p.getnamed("p7_rubix").message( new Array( "probmono", 1) );
+}
+
+function phase_8() {
+	p.getnamed("p8_rubix_t").message( 1 );
+	p.getnamed("p8_ran_t").message( 1 );
+	p.getnamed("p8_xfade").message( "bang" );
+	p.getnamed("p8_amp").message( "bang" );
+}
+
+function phase_9() {
+	p.getnamed("p9_amp").message( "bang" );
+}
+
+function phase_10() {
+	p.getnamed("p10_amp").message( "bang" );
+}
+
+function phase_11() {
+	p.getnamed("p11_amp").message( "bang" );
+}
+
+function phase_12() {
+	p.getnamed("p12_amp").message( "bang" );
 }
