@@ -3,6 +3,8 @@ include("timings.js");
 include("util.js");
 
 autowatch = 1;
+var paused = false; // Is it paused?
+
 getTime.immediate = 1;
 checkTime.immediate = 1;
 phase_1.immediate = 1;
@@ -21,6 +23,10 @@ phase_10.immediate = 1;
 phase_11.immediate = 1;
 phase_12.immediate = 1;
 phase_13.immediate = 1;
+phase_14.immediate = 1;
+phase_15.immediate = 1;
+phase_16.immediate = 1;
+phase_17.immediate = 1;
 
 var _G = new Global( "global" );
 var util = Util.getInstance(); 
@@ -38,11 +44,28 @@ function bang() {
 }
 
 function getTime() {
-	outlet(0, _G.timer.getTime() );
+	if (!paused) {
+		outlet(0, _G.timer.getTime() );
+	} 
 }
 
 function updateTimer( time ) {
 	_G.timerOffset = time;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+function pause() {
+	if (paused == true) 
+		return;
+	paused = true;
+	_G.timer.pause();
+}
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+function resume() {
+	if (paused == false) 
+		return;
+	paused = false;
+	_G.timer.resume();
 }
 
 function checkTime() {
@@ -87,6 +110,16 @@ function checkTime() {
 					phase_12();
 				} else if ( k == "phase_13" ) {
 					phase_13();
+				} else if ( k == "phase_14" ) {
+					phase_14();
+				} else if ( k == "phase_15" ) {
+					phase_15();
+				} else if ( k == "phase_16" ) {
+					phase_16();
+				} else if ( k == "phase_17" ) {
+					phase_17();
+				} else if ( k == "phase_18" ) {
+					phase_18();
 				}
 			}
 		}
@@ -94,7 +127,8 @@ function checkTime() {
 }
 
 function phase_1() {
-	// Turning on metros
+
+	p.getnamed("webcam_open").message( "bang" );
 	p.getnamed("p1_xfade").message( "bang" );
 	p.getnamed("p1_env_t").message(1);
 	input1.getnamed("p1_t").message(1);
@@ -124,7 +158,7 @@ function phase_3() {
 	input2.getnamed("p4_counter").message( new Array( "set", 1) );
 	p.getnamed("p3_xfade").message( "bang" );
 	input2.getnamed("p3_div").message( "bang" );
-	input1.getnamed("p1-3_col_gate").message( 1 );
+	input1.getnamed("p1-3_col_gate").message( 2 );
 	input2.getnamed("p3_size1").message( "bang" );
 	input2.getnamed("p3_multX_1").message( "bang" );	
 }
@@ -209,4 +243,39 @@ function phase_12() {
 
 function phase_13() {
 	p.getnamed("p13_amp").message( "bang" );
+}
+
+function phase_14() {
+	p.getnamed("ferous").message( 1 );
+	p.getnamed("p14_xfade").message( "bang" );
+	p.getnamed("last_xfade_gate").message( 1 );
+	p.getnamed("webcam_gate").message( 1 );
+	p.getnamed("webcam_open").message( "bang" );
+	p.getnamed("p14_go_go").message( "bang" );
+	p.getnamed("p14_fade").message( "bang" );
+	input2.getnamed("p15_multiX").message( "bang" );
+	input2.getnamed("p3_size1").message( "bang" );
+}
+
+function phase_15() {
+	input2.getnamed("p3_div").message( "bang" );
+}
+
+function phase_16() {
+	input2.getnamed("p4_size_t").message( "bang" );
+	input2.getnamed("p5_div_t").message( "bang" );
+	input2.getnamed("p5_rand_t").message( "bang" );
+	p.getnamed("checker_t").message( 1 );
+}
+
+function phase_17() {
+	input1.getnamed("p1-3_col_gate").message( 1 );
+	p.getnamed("p17_lol").message( "bang" );
+	p.getnamed("p17_t").message( 1 );
+	input1.getnamed("p17_amp_mult").message(1);
+	input1.getnamed("p17_quant_mult").message(1);
+}
+
+function phase_18() {
+	p.getnamed("END").message( "bang" );
 }
