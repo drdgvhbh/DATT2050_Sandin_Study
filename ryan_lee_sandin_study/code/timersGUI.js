@@ -27,6 +27,8 @@ phase_14.immediate = 1;
 phase_15.immediate = 1;
 phase_16.immediate = 1;
 phase_17.immediate = 1;
+phase_18.immediate = 1;
+phase_19.immediate = 1;
 
 var _G = new Global( "global" );
 var util = Util.getInstance(); 
@@ -120,6 +122,8 @@ function checkTime() {
 					phase_17();
 				} else if ( k == "phase_18" ) {
 					phase_18();
+				} else if ( k == "phase_19" ) {
+					phase_19();
 				}
 			}
 		}
@@ -278,4 +282,8 @@ function phase_17() {
 
 function phase_18() {
 	p.getnamed("END").message( "bang" );
+}
+
+function phase_19() {
+	p.getnamed("FINISH").message( 0 );
 }

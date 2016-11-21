@@ -2,7 +2,7 @@
 	"name" : "ryan_lee_sandin_study",
 	"version" : 1,
 	"creationdate" : -733142200,
-	"modificationdate" : -732376890,
+	"modificationdate" : -732374107,
 	"viewrect" : [ 542.0, 399.0, 300.0, 500.0 ],
 	"autoorganize" : 1,
 	"hideprojectwindow" : 0,
@@ -10,9 +10,10 @@
 	"autolocalize" : 0,
 	"contents" : 	{
 		"patchers" : 		{
-			"newMAIN.maxpat" : 			{
+			"ryan_lee_sandin_study.maxpat" : 			{
 				"kind" : "patcher",
-				"local" : 1
+				"local" : 1,
+				"toplevel" : 1
 			}
 
 		}
@@ -38,11 +39,6 @@
 ,
 			"timersGUI.js" : 			{
 				"kind" : "javascript",
-				"local" : 1
-			}
-,
-			"customKaleido.genjit" : 			{
-				"kind" : "genjit",
 				"local" : 1
 			}
 

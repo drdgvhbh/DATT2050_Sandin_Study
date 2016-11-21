@@ -21,7 +21,8 @@ var Timings = ( function() {
 			"phase_15" : new Array ( false, 90150. ),
 			"phase_16" : new Array ( false, 96150. ),
 			"phase_17" : new Array ( false, 106150. ),
-			"phase_18" : new Array ( false, 118000. )
+			"phase_18" : new Array ( false, 118000. ),
+			"phase_19" : new Array ( false, 126000. )
 		}
 	}
 	return Timings;

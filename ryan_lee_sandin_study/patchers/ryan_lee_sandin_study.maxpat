@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 42.0, 84.0, 1205.0, 930.0 ],
+		"rect" : [ 34.0, 76.0, 1852.0, 930.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -38,6 +38,32 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
+					"fontface" : 1,
+					"fontsize" : 20.0,
+					"id" : "obj-222",
+					"linecount" : 2,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 44.166668, 363.0, 171.0, 52.0 ],
+					"style" : "",
+					"text" : "make sure your webcam works!"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-186",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 543.0, 610.0, 150.0, 20.0 ],
+					"style" : ""
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-184",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
@@ -56,7 +82,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 54.166668, 371.0, 440.0, 117.0 ],
+					"patching_rect" : [ 50.166668, 428.0, 440.0, 117.0 ],
 					"style" : "",
 					"text" : "used the built in gen effects with some minor edits to them. such as the kaliedo, twirl etc. compostiors like xfade and brocasa i left the same. \n\ni used this video for one of the segments:  https://archive.org/details/electricsheep-flock-247-7500-8\n\nI used this song to generate the graphics but didnt actually play it ( audio wise):\nAirzoom - Sky World (Bart Panco Orchestral Remix) [Trance All-Stars].wav"
 				}
@@ -5579,7 +5605,6 @@
 						"tags" : "",
 						"style" : "",
 						"subpatcher_template" : "",
-						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"color" : [ 0.317647, 0.654902, 0.976471, 1.0 ],
@@ -7855,7 +7880,6 @@
 						"tags" : "",
 						"style" : "",
 						"subpatcher_template" : "",
-						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-24",
@@ -9787,21 +9811,21 @@
 												"selection" : [ 0.0, 1.0 ],
 												"loop" : 1,
 												"content_state" : 												{
-													"slurtime" : [ 0.0 ],
-													"basictuning" : [ 440 ],
-													"pitchshift" : [ 1.0 ],
-													"speed" : [ 1.0 ],
-													"mode" : [ "basic" ],
 													"originallength" : [ 0.0, "ticks" ],
-													"originaltempo" : [ 120.0 ],
-													"followglobaltempo" : [ 0 ],
-													"pitchcorrection" : [ 0 ],
-													"originallengthms" : [ 0.0 ],
 													"formantcorrection" : [ 0 ],
-													"play" : [ 0 ],
 													"quality" : [ "basic" ],
+													"originaltempo" : [ 120.0 ],
+													"play" : [ 0 ],
+													"mode" : [ "basic" ],
+													"slurtime" : [ 0.0 ],
+													"followglobaltempo" : [ 0 ],
 													"formant" : [ 1.0 ],
-													"timestretch" : [ 0 ]
+													"basictuning" : [ 440 ],
+													"pitchcorrection" : [ 0 ],
+													"timestretch" : [ 0 ],
+													"speed" : [ 1.0 ],
+													"pitchshift" : [ 1.0 ],
+													"originallengthms" : [ 0.0 ]
 												}
 
 											}
@@ -11565,13 +11589,14 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-97",
+					"linecount" : 2,
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 360.0, 135.800034, 50.0, 22.0 ],
+					"patching_rect" : [ 360.0, 135.800034, 50.0, 36.0 ],
 					"style" : "",
-					"text" : "3729."
+					"text" : "126246."
 				}
 
 			}
@@ -12887,7 +12912,8 @@
 					"outlettype" : [ "int" ],
 					"parameter_enable" : 0,
 					"patching_rect" : [ 149.233322, 24.833334, 147.266678, 147.266678 ],
-					"style" : ""
+					"style" : "",
+					"varname" : "FINISH"
 				}
 
 			}
