@@ -20,6 +20,7 @@ phase_9.immediate = 1;
 phase_10.immediate = 1;
 phase_11.immediate = 1;
 phase_12.immediate = 1;
+phase_13.immediate = 1;
 
 var _G = new Global( "global" );
 var util = Util.getInstance(); 
@@ -84,6 +85,8 @@ function checkTime() {
 					phase_11();
 				} else if ( k == "phase_12" ) {
 					phase_12();
+				} else if ( k == "phase_13" ) {
+					phase_13();
 				}
 			}
 		}
@@ -184,6 +187,8 @@ function phase_8() {
 	p.getnamed("p8_ran_t").message( 1 );
 	p.getnamed("p8_xfade").message( "bang" );
 	p.getnamed("p8_amp").message( "bang" );
+	p.getnamed("p1_env_t").message(0);
+	p.getnamed("p8_env_t").message(1);	
 }
 
 function phase_9() {
@@ -200,4 +205,8 @@ function phase_11() {
 
 function phase_12() {
 	p.getnamed("p12_amp").message( "bang" );
+}
+
+function phase_13() {
+	p.getnamed("p13_amp").message( "bang" );
 }
